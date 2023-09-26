@@ -1,0 +1,615 @@
+ffmpeg started on 2023-09-20 at 18:11:05
+Report written to "ffmpeg-20230920-181105.log"
+Log level: 48
+Command line:
+ffmpeg -report -f dshow -rtbufsize 100M -i "video=Integrated Webcam" -vf "scale=1280:720" -c:v libx264 -preset fast -hls_time 2 -hls_list_size 5 -hls_flags delete_segments C:/Users/Dell/Desktop/static/stream.m3u8
+ffmpeg version 6.0-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Splitting the commandline.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'dshow'.
+Reading option '-rtbufsize' ... matched as AVOption 'rtbufsize' with argument '100M'.
+Reading option '-i' ... matched as input url with argument 'video=Integrated Webcam'.
+Reading option '-vf' ... matched as option 'vf' (set video filters) with argument 'scale=1280:720'.
+Reading option '-c:v' ... matched as option 'c' (codec name) with argument 'libx264'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'fast'.
+Reading option '-hls_time' ... matched as AVOption 'hls_time' with argument '2'.
+Reading option '-hls_list_size' ... matched as AVOption 'hls_list_size' with argument '5'.
+Reading option '-hls_flags' ... matched as AVOption 'hls_flags' with argument 'delete_segments'.
+Reading option 'C:/Users/Dell/Desktop/static/stream.m3u8' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url video=Integrated Webcam.
+Applying option f (force format) with argument dshow.
+Successfully parsed a group of options.
+Opening an input file: video=Integrated Webcam.
+[dshow @ 0000020665e9b980] Selecting pin Capture on video
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530619374143 orig timestamp 4530619374143 graph timestamp 4530619370000 diff -4143 Integrated Webcam
+[dshow @ 0000020665e9b980] All info found
+Input #0, dshow, from 'video=Integrated Webcam':
+  Duration: N/A, start: 453061.937414, bitrate: N/A
+  Stream #0:0, 1, 1/10000000: Video: rawvideo (YUY2 / 0x32595559), yuyv422(tv, bt470bg/bt709/unknown), 640x480, 30 fps, 30 tbr, 10000k tbn
+Successfully opened the file.
+Parsing a group of options: output url C:/Users/Dell/Desktop/static/stream.m3u8.
+Applying option vf (set video filters) with argument scale=1280:720.
+Applying option c:v (codec name) with argument libx264.
+Successfully parsed a group of options.
+Opening an output file: C:/Users/Dell/Desktop/static/stream.m3u8.
+Successfully opened the file.
+Stream mapping:
+  Stream #0:0 -> #0:0 (rawvideo (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[vost#0:0/libx264 @ 0000020665f4a2c0] cur_dts is invalid [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[AVFilterGraph @ 0000020665ea1640] Setting 'w' to value '1280'
+[AVFilterGraph @ 0000020665ea1640] Setting 'h' to value '720'
+detected 4 logical cores
+[Parsed_scale_0 @ 0000020665f4d800] w:1280 h:720 flags:'' interl:0
+[graph 0 input from stream 0:0 @ 0000020665f5bc00] Setting 'video_size' to value '640x480'
+[graph 0 input from stream 0:0 @ 0000020665f5bc00] Setting 'pix_fmt' to value '1'
+[graph 0 input from stream 0:0 @ 0000020665f5bc00] Setting 'time_base' to value '1/10000000'
+[graph 0 input from stream 0:0 @ 0000020665f5bc00] Setting 'pixel_aspect' to value '0/1'
+[graph 0 input from stream 0:0 @ 0000020665f5bc00] Setting 'frame_rate' to value '10000000/333333'
+[graph 0 input from stream 0:0 @ 0000020665f5bc00] w:640 h:480 pixfmt:yuyv422 tb:1/10000000 fr:10000000/333333 sar:0/1
+[format @ 0000020665f5c080] Setting 'pix_fmts' to value 'yuv420p|yuvj420p|yuv422p|yuvj422p|yuv444p|yuvj444p|nv12|nv16|nv21|yuv420p10le|yuv422p10le|yuv444p10le|nv20le|gray|gray10le'
+[AVFilterGraph @ 0000020665ea1640] query_formats: 4 queried, 3 merged, 0 already done, 0 delayed
+[Parsed_scale_0 @ 0000020665f4d800] picking yuv422p out of 14 ref:yuyv422 alpha:0
+[Parsed_scale_0 @ 0000020665f4d800] w:640 h:480 fmt:yuyv422 sar:0/1 -> w:1280 h:720 fmt:yuv422p sar:0/1 flags:0x00000004
+[Parsed_scale_0 @ 0000020665f4d800] w:640 h:480 fmt:yuyv422 sar:0/1 -> w:1280 h:720 fmt:yuv422p sar:0/1 flags:0x00000004
+[Parsed_scale_0 @ 0000020665f4d800] w:640 h:480 fmt:yuyv422 sar:0/1 -> w:1280 h:720 fmt:yuv422p sar:0/1 flags:0x00000004
+[Parsed_scale_0 @ 0000020665f4d800] w:640 h:480 fmt:yuyv422 sar:0/1 -> w:1280 h:720 fmt:yuv422p sar:0/1 flags:0x00000004
+[libx264 @ 0000020665f4a5c0] using mv_range_thread = 56
+[libx264 @ 0000020665f4a5c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000020665f4a5c0] profile High 4:2:2, level 3.1, 4:2:2, 8-bit
+[libx264 @ 0000020665f4a5c0] 264 - core 164 r3106 eaa68fa - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[mpegts @ 000002066afa1180] service 1 using PCR in pid=256, pcr_period=0ms
+[mpegts @ 000002066afa1180] muxrate VBR, sdt every 1073741822000 ms, pat/pmt every 1073741822000 ms
+Output #0, hls, to 'C:/Users/Dell/Desktop/static/stream.m3u8':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0, 0, 1/90000: Video: h264, yuv422p(tv, bt470bg/bt709/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+    Metadata:
+      encoder         : Lavc60.3.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[vost#0:0/libx264 @ 0000020665f4a2c0] Clipping frame in rate conversion by 0.000008
+frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530620494246 orig timestamp 4530620494246 graph timestamp 4530620490000 diff -4246 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530621455292 orig timestamp 4530621455292 graph timestamp 4530621450000 diff -5292 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530622416999 orig timestamp 4530622416999 graph timestamp 4530622410000 diff -6999 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530623377344 orig timestamp 4530623377344 graph timestamp 4530623370000 diff -7344 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530624494675 orig timestamp 4530624494675 graph timestamp 4530624490000 diff -4675 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530625451603 orig timestamp 4530625451603 graph timestamp 4530625440000 diff -11603 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s dup=12 drop=0 speed=N/A    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530626411801 orig timestamp 4530626411801 graph timestamp 4530626410000 diff -1801 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530627371977 orig timestamp 4530627371977 graph timestamp 4530627370000 diff -1977 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530628491508 orig timestamp 4530628491508 graph timestamp 4530628490000 diff -1508 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530629450394 orig timestamp 4530629450394 graph timestamp 4530629440000 diff -10394 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530630410799 orig timestamp 4530630410799 graph timestamp 4530630400000 diff -10799 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530631370828 orig timestamp 4530631370828 graph timestamp 4530631370000 diff -828 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s dup=24 drop=0 speed=N/A    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530632490373 orig timestamp 4530632490373 graph timestamp 4530632500000 diff 9627 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530633450450 orig timestamp 4530633450450 graph timestamp 4530633450000 diff -450 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=   0 QP=22.84 NAL=3 Slice:I Poc:0   I:3600 P:0    SKIP:0    size=43795 bytes
+[libx264 @ 0000020665f4a5c0] frame=   1 QP=23.75 NAL=2 Slice:P Poc:8   I:1337 P:2170 SKIP:93   size=34757 bytes
+[libx264 @ 0000020665f4a5c0] frame=   2 QP=23.69 NAL=2 Slice:B Poc:4   I:13   P:913  SKIP:2674 size=1236 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530634410466 orig timestamp 4530634410466 graph timestamp 4530634410000 diff -466 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=   3 QP=24.33 NAL=0 Slice:B Poc:2   I:3    P:261  SKIP:3336 size=385 bytes
+[libx264 @ 0000020665f4a5c0] frame=   4 QP=24.93 NAL=0 Slice:B Poc:6   I:32   P:543  SKIP:3025 size=1136 bytes
+[libx264 @ 0000020665f4a5c0] frame=   5 QP=25.02 NAL=2 Slice:P Poc:16  I:696  P:2822 SKIP:82   size=28140 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530635371689 orig timestamp 4530635371689 graph timestamp 4530635370000 diff -1689 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=   6 QP=24.24 NAL=2 Slice:B Poc:12  I:98   P:1506 SKIP:1996 size=4033 bytes
+[libx264 @ 0000020665f4a5c0] frame=   7 QP=25.06 NAL=0 Slice:B Poc:10  I:32   P:625  SKIP:2943 size=1253 bytes
+[libx264 @ 0000020665f4a5c0] frame=   8 QP=24.37 NAL=0 Slice:B Poc:14  I:8    P:315  SKIP:3277 size=547 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530636331728 orig timestamp 4530636331728 graph timestamp 4530636330000 diff -1728 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=   9 QP=22.81 NAL=2 Slice:P Poc:24  I:1378 P:2102 SKIP:120  size=37447 bytes
+[libx264 @ 0000020665f4a5c0] frame=  10 QP=24.40 NAL=2 Slice:B Poc:20  I:1960 P:1479 SKIP:161  size=27285 bytes
+[libx264 @ 0000020665f4a5c0] frame=  11 QP=25.32 NAL=0 Slice:B Poc:18  I:3    P:546  SKIP:3051 size=1081 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530637451186 orig timestamp 4530637451186 graph timestamp 4530637450000 diff -1186 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  12 QP=24.80 NAL=0 Slice:B Poc:22  I:13   P:693  SKIP:2894 size=961 bytes
+[libx264 @ 0000020665f4a5c0] frame=  13 QP=23.82 NAL=2 Slice:P Poc:32  I:1063 P:2448 SKIP:89   size=31307 bytes
+[libx264 @ 0000020665f4a5c0] frame=  14 QP=24.09 NAL=2 Slice:B Poc:28  I:17   P:985  SKIP:2598 size=1488 bytes
+frame=   14 fps=8.0 q=29.0 size=N/A time=00:00:00.40 bitrate=N/A dup=36 drop=0 speed=0.229x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530638411291 orig timestamp 4530638411291 graph timestamp 4530638410000 diff -1291 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  15 QP=24.19 NAL=0 Slice:B Poc:26  I:0    P:308  SKIP:3292 size=404 bytes
+[libx264 @ 0000020665f4a5c0] frame=  16 QP=24.90 NAL=0 Slice:B Poc:30  I:26   P:442  SKIP:3132 size=970 bytes
+[libx264 @ 0000020665f4a5c0] frame=  17 QP=25.10 NAL=2 Slice:P Poc:40  I:579  P:2885 SKIP:136  size=25165 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530639371629 orig timestamp 4530639371629 graph timestamp 4530639370000 diff -1629 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  18 QP=24.13 NAL=2 Slice:B Poc:36  I:116  P:1543 SKIP:1941 size=4227 bytes
+[libx264 @ 0000020665f4a5c0] frame=  19 QP=24.97 NAL=0 Slice:B Poc:34  I:23   P:607  SKIP:2970 size=1122 bytes
+[libx264 @ 0000020665f4a5c0] frame=  20 QP=24.36 NAL=0 Slice:B Poc:38  I:2    P:301  SKIP:3297 size=499 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530640331841 orig timestamp 4530640331841 graph timestamp 4530640330000 diff -1841 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  21 QP=22.85 NAL=2 Slice:P Poc:48  I:1337 P:2116 SKIP:147  size=35989 bytes
+[libx264 @ 0000020665f4a5c0] frame=  22 QP=24.37 NAL=2 Slice:B Poc:44  I:1899 P:1434 SKIP:267  size=26386 bytes
+[libx264 @ 0000020665f4a5c0] frame=  23 QP=25.03 NAL=0 Slice:B Poc:42  I:5    P:491  SKIP:3104 size=923 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530641451300 orig timestamp 4530641451300 graph timestamp 4530641450000 diff -1300 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  24 QP=24.76 NAL=0 Slice:B Poc:46  I:6    P:848  SKIP:2746 size=1058 bytes
+[libx264 @ 0000020665f4a5c0] frame=  25 QP=23.83 NAL=2 Slice:P Poc:56  I:929  P:2539 SKIP:132  size=30275 bytes
+[libx264 @ 0000020665f4a5c0] frame=  26 QP=23.72 NAL=2 Slice:B Poc:52  I:11   P:1010 SKIP:2579 size=1413 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530642411643 orig timestamp 4530642411643 graph timestamp 4530642410000 diff -1643 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  27 QP=24.36 NAL=0 Slice:B Poc:50  I:1    P:326  SKIP:3273 size=426 bytes
+[libx264 @ 0000020665f4a5c0] frame=  28 QP=25.06 NAL=0 Slice:B Poc:54  I:27   P:438  SKIP:3135 size=926 bytes
+[libx264 @ 0000020665f4a5c0] frame=  29 QP=25.08 NAL=2 Slice:P Poc:64  I:540  P:2907 SKIP:153  size=24879 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530643371546 orig timestamp 4530643371546 graph timestamp 4530643370000 diff -1546 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  30 QP=24.09 NAL=2 Slice:B Poc:60  I:118  P:1586 SKIP:1896 size=4396 bytes
+[libx264 @ 0000020665f4a5c0] frame=  31 QP=24.90 NAL=0 Slice:B Poc:58  I:25   P:754  SKIP:2821 size=1259 bytes
+[libx264 @ 0000020665f4a5c0] frame=  32 QP=24.68 NAL=0 Slice:B Poc:62  I:5    P:271  SKIP:3324 size=490 bytes
+frame=   32 fps= 14 q=29.0 size=N/A time=00:00:01.00 bitrate=N/A dup=48 drop=0 speed=0.427x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530644331969 orig timestamp 4530644331969 graph timestamp 4530644380000 diff 48031 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  33 QP=22.91 NAL=2 Slice:P Poc:72  I:1237 P:2233 SKIP:130  size=35357 bytes
+[libx264 @ 0000020665f4a5c0] frame=  34 QP=24.38 NAL=2 Slice:B Poc:68  I:1940 P:1356 SKIP:304  size=26374 bytes
+[libx264 @ 0000020665f4a5c0] frame=  35 QP=25.23 NAL=0 Slice:B Poc:66  I:3    P:615  SKIP:2982 size=1024 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530645450786 orig timestamp 4530645450786 graph timestamp 4530645450000 diff -786 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  36 QP=24.83 NAL=0 Slice:B Poc:70  I:10   P:827  SKIP:2763 size=1093 bytes
+[libx264 @ 0000020665f4a5c0] frame=  37 QP=23.76 NAL=2 Slice:P Poc:80  I:919  P:2531 SKIP:150  size=29869 bytes
+[libx264 @ 0000020665f4a5c0] frame=  38 QP=23.85 NAL=2 Slice:B Poc:76  I:24   P:1068 SKIP:2508 size=1713 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530646411020 orig timestamp 4530646411020 graph timestamp 4530646410000 diff -1020 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  39 QP=24.38 NAL=0 Slice:B Poc:74  I:0    P:213  SKIP:3387 size=318 bytes
+[libx264 @ 0000020665f4a5c0] frame=  40 QP=24.98 NAL=0 Slice:B Poc:78  I:17   P:636  SKIP:2947 size=1097 bytes
+[libx264 @ 0000020665f4a5c0] frame=  41 QP=25.17 NAL=2 Slice:P Poc:88  I:559  P:2881 SKIP:160  size=24391 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530647371482 orig timestamp 4530647371482 graph timestamp 4530647370000 diff -1482 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  42 QP=24.18 NAL=2 Slice:B Poc:84  I:90   P:1604 SKIP:1906 size=4240 bytes
+[libx264 @ 0000020665f4a5c0] frame=  43 QP=25.01 NAL=0 Slice:B Poc:82  I:20   P:629  SKIP:2951 size=1108 bytes
+[libx264 @ 0000020665f4a5c0] frame=  44 QP=24.52 NAL=0 Slice:B Poc:86  I:3    P:306  SKIP:3291 size=520 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530648331583 orig timestamp 4530648331583 graph timestamp 4530648330000 diff -1583 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  45 QP=23.82 NAL=2 Slice:P Poc:96  I:1036 P:2421 SKIP:143  size=30989 bytes
+[libx264 @ 0000020665f4a5c0] frame=  46 QP=24.53 NAL=2 Slice:B Poc:92  I:1926 P:1446 SKIP:228  size=26707 bytes
+[libx264 @ 0000020665f4a5c0] frame=  47 QP=24.95 NAL=0 Slice:B Poc:90  I:2    P:458  SKIP:3140 size=868 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530649291441 orig timestamp 4530649291441 graph timestamp 4530649290000 diff -1441 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  48 QP=24.59 NAL=0 Slice:B Poc:94  I:28   P:780  SKIP:2792 size=1405 bytes
+[libx264 @ 0000020665f4a5c0] frame=  49 QP=23.92 NAL=2 Slice:P Poc:104 I:1052 P:2380 SKIP:168  size=29926 bytes
+[libx264 @ 0000020665f4a5c0] frame=  50 QP=24.00 NAL=2 Slice:B Poc:100 I:23   P:1071 SKIP:2506 size=1983 bytes
+frame=   50 fps= 17 q=29.0 size=N/A time=00:00:01.60 bitrate=N/A dup=60 drop=0 speed=0.55x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530650411902 orig timestamp 4530650411902 graph timestamp 4530650410000 diff -1902 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  51 QP=24.73 NAL=0 Slice:B Poc:98  I:30   P:659  SKIP:2911 size=1255 bytes
+[libx264 @ 0000020665f4a5c0] frame=  52 QP=24.05 NAL=0 Slice:B Poc:102 I:0    P:184  SKIP:3416 size=309 bytes
+[libx264 @ 0000020665f4a5c0] frame=  53 QP=25.20 NAL=2 Slice:P Poc:112 I:681  P:2762 SKIP:157  size=24919 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530651371174 orig timestamp 4530651371174 graph timestamp 4530651370000 diff -1174 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  54 QP=24.09 NAL=2 Slice:B Poc:108 I:95   P:1445 SKIP:2060 size=3913 bytes
+[libx264 @ 0000020665f4a5c0] frame=  55 QP=24.93 NAL=0 Slice:B Poc:106 I:13   P:785  SKIP:2802 size=1201 bytes
+[libx264 @ 0000020665f4a5c0] frame=  56 QP=24.46 NAL=0 Slice:B Poc:110 I:1    P:325  SKIP:3274 size=550 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530652331654 orig timestamp 4530652331654 graph timestamp 4530652340000 diff 8346 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  57 QP=23.84 NAL=2 Slice:P Poc:120 I:1005 P:2441 SKIP:154  size=30648 bytes
+[libx264 @ 0000020665f4a5c0] frame=  58 QP=24.39 NAL=2 Slice:B Poc:116 I:1903 P:1405 SKIP:292  size=26237 bytes
+[libx264 @ 0000020665f4a5c0] frame=  59 QP=25.23 NAL=0 Slice:B Poc:114 I:6    P:672  SKIP:2922 size=1133 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530653291460 orig timestamp 4530653291460 graph timestamp 4530653290000 diff -1460 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  60 QP=24.95 NAL=0 Slice:B Poc:118 I:27   P:682  SKIP:2891 size=1254 bytes
+[libx264 @ 0000020665f4a5c0] frame=  61 QP=23.85 NAL=2 Slice:P Poc:128 I:1064 P:2368 SKIP:168  size=29752 bytes
+[libx264 @ 0000020665f4a5c0] frame=  62 QP=23.94 NAL=2 Slice:B Poc:124 I:32   P:1004 SKIP:2564 size=1962 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530654411225 orig timestamp 4530654411225 graph timestamp 4530654410000 diff -1225 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  63 QP=24.95 NAL=0 Slice:B Poc:122 I:25   P:690  SKIP:2885 size=1253 bytes
+[libx264 @ 0000020665f4a5c0] frame=  64 QP=24.26 NAL=0 Slice:B Poc:126 I:4    P:173  SKIP:3423 size=312 bytes
+[libx264 @ 0000020665f4a5c0] frame=  65 QP=25.16 NAL=2 Slice:P Poc:136 I:686  P:2741 SKIP:173  size=24931 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530655371342 orig timestamp 4530655371342 graph timestamp 4530655370000 diff -1342 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  66 QP=24.12 NAL=2 Slice:B Poc:132 I:97   P:1471 SKIP:2032 size=3865 bytes
+[libx264 @ 0000020665f4a5c0] frame=  67 QP=24.79 NAL=0 Slice:B Poc:130 I:26   P:700  SKIP:2874 size=1280 bytes
+[libx264 @ 0000020665f4a5c0] frame=  68 QP=24.53 NAL=0 Slice:B Poc:134 I:3    P:287  SKIP:3310 size=501 bytes
+frame=   67 fps= 19 q=29.0 size=N/A time=00:00:02.20 bitrate=N/A dup=72 drop=0 speed=0.625x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530656331394 orig timestamp 4530656331394 graph timestamp 4530656330000 diff -1394 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  69 QP=23.77 NAL=2 Slice:P Poc:144 I:1099 P:2349 SKIP:152  size=31007 bytes
+[libx264 @ 0000020665f4a5c0] frame=  70 QP=24.47 NAL=2 Slice:B Poc:140 I:1883 P:1385 SKIP:332  size=26160 bytes
+[libx264 @ 0000020665f4a5c0] frame=  71 QP=25.21 NAL=0 Slice:B Poc:138 I:3    P:623  SKIP:2974 size=1055 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530657291991 orig timestamp 4530657291991 graph timestamp 4530657290000 diff -1991 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  72 QP=24.85 NAL=0 Slice:B Poc:142 I:31   P:692  SKIP:2877 size=1317 bytes
+[libx264 @ 0000020665f4a5c0] frame=  73 QP=23.90 NAL=2 Slice:P Poc:152 I:1010 P:2418 SKIP:172  size=29454 bytes
+[libx264 @ 0000020665f4a5c0] frame=  74 QP=23.92 NAL=2 Slice:B Poc:148 I:16   P:965  SKIP:2619 size=1792 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530658411123 orig timestamp 4530658411123 graph timestamp 4530658410000 diff -1123 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  75 QP=24.96 NAL=0 Slice:B Poc:146 I:30   P:664  SKIP:2906 size=1266 bytes
+[libx264 @ 0000020665f4a5c0] frame=  76 QP=24.65 NAL=0 Slice:B Poc:150 I:3    P:155  SKIP:3442 size=284 bytes
+[libx264 @ 0000020665f4a5c0] frame=  77 QP=25.29 NAL=2 Slice:P Poc:160 I:755  P:2673 SKIP:172  size=24400 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530659371467 orig timestamp 4530659371467 graph timestamp 4530659370000 diff -1467 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  78 QP=24.15 NAL=2 Slice:B Poc:156 I:102  P:1530 SKIP:1968 size=4051 bytes
+[libx264 @ 0000020665f4a5c0] frame=  79 QP=24.97 NAL=0 Slice:B Poc:154 I:17   P:569  SKIP:3014 size=1022 bytes
+[libx264 @ 0000020665f4a5c0] frame=  80 QP=24.56 NAL=0 Slice:B Poc:158 I:5    P:312  SKIP:3283 size=521 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530660331272 orig timestamp 4530660331272 graph timestamp 4530660330000 diff -1272 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  81 QP=23.77 NAL=2 Slice:P Poc:168 I:1237 P:2245 SKIP:118  size=31845 bytes
+[libx264 @ 0000020665f4a5c0] frame=  82 QP=24.35 NAL=2 Slice:B Poc:164 I:1890 P:1446 SKIP:264  size=26173 bytes
+[libx264 @ 0000020665f4a5c0] frame=  83 QP=25.01 NAL=0 Slice:B Poc:162 I:2    P:501  SKIP:3097 size=911 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530661291421 orig timestamp 4530661291421 graph timestamp 4530661290000 diff -1421 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  84 QP=25.01 NAL=0 Slice:B Poc:166 I:22   P:677  SKIP:2901 size=1207 bytes
+[libx264 @ 0000020665f4a5c0] frame=  85 QP=25.30 NAL=2 Slice:P Poc:176 I:718  P:2704 SKIP:178  size=23836 bytes
+[libx264 @ 0000020665f4a5c0] frame=  86 QP=24.31 NAL=2 Slice:B Poc:172 I:67   P:1629 SKIP:1904 size=4127 bytes
+frame=   86 fps= 21 q=29.0 size=N/A time=00:00:02.80 bitrate=N/A dup=84 drop=0 speed=0.683x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530662251837 orig timestamp 4530662251837 graph timestamp 4530662250000 diff -1837 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  87 QP=24.78 NAL=0 Slice:B Poc:170 I:19   P:594  SKIP:2987 size=1051 bytes
+[libx264 @ 0000020665f4a5c0] frame=  88 QP=24.85 NAL=0 Slice:B Poc:174 I:3    P:325  SKIP:3272 size=578 bytes
+[libx264 @ 0000020665f4a5c0] frame=  89 QP=25.17 NAL=2 Slice:P Poc:184 I:758  P:2657 SKIP:185  size=24578 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530663371131 orig timestamp 4530663371131 graph timestamp 4530663370000 diff -1131 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  90 QP=23.04 NAL=2 Slice:B Poc:180 I:157  P:2176 SKIP:1267 size=7914 bytes
+[libx264 @ 0000020665f4a5c0] frame=  91 QP=24.87 NAL=0 Slice:B Poc:178 I:2    P:532  SKIP:3066 size=797 bytes
+[libx264 @ 0000020665f4a5c0] frame=  92 QP=24.63 NAL=0 Slice:B Poc:182 I:2    P:387  SKIP:3211 size=579 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530664331264 orig timestamp 4530664331264 graph timestamp 4530664330000 diff -1264 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  93 QP=23.86 NAL=2 Slice:P Poc:192 I:1069 P:2395 SKIP:136  size=30530 bytes
+[libx264 @ 0000020665f4a5c0] frame=  94 QP=24.47 NAL=2 Slice:B Poc:188 I:1839 P:1502 SKIP:259  size=26027 bytes
+[libx264 @ 0000020665f4a5c0] frame=  95 QP=25.13 NAL=0 Slice:B Poc:186 I:4    P:494  SKIP:3102 size=929 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530665291415 orig timestamp 4530665291415 graph timestamp 4530665290000 diff -1415 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  96 QP=24.77 NAL=0 Slice:B Poc:190 I:23   P:770  SKIP:2807 size=1356 bytes
+[libx264 @ 0000020665f4a5c0] frame=  97 QP=25.40 NAL=2 Slice:P Poc:200 I:642  P:2787 SKIP:171  size=23205 bytes
+[libx264 @ 0000020665f4a5c0] frame=  98 QP=24.36 NAL=2 Slice:B Poc:196 I:82   P:1727 SKIP:1791 size=4473 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530666252044 orig timestamp 4530666252044 graph timestamp 4530666270000 diff 17956 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame=  99 QP=24.95 NAL=0 Slice:B Poc:194 I:23   P:732  SKIP:2845 size=1291 bytes
+[libx264 @ 0000020665f4a5c0] frame= 100 QP=24.68 NAL=0 Slice:B Poc:198 I:1    P:308  SKIP:3291 size=530 bytes
+[libx264 @ 0000020665f4a5c0] frame= 101 QP=25.22 NAL=2 Slice:P Poc:208 I:777  P:2669 SKIP:154  size=24265 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530667371247 orig timestamp 4530667371247 graph timestamp 4530667370000 diff -1247 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 102 QP=23.01 NAL=2 Slice:B Poc:204 I:121  P:2250 SKIP:1229 size=7907 bytes
+[libx264 @ 0000020665f4a5c0] frame= 103 QP=24.64 NAL=0 Slice:B Poc:202 I:3    P:622  SKIP:2975 size=908 bytes
+[libx264 @ 0000020665f4a5c0] frame= 104 QP=24.70 NAL=0 Slice:B Poc:206 I:1    P:363  SKIP:3236 size=535 bytes
+frame=  103 fps= 22 q=29.0 size=N/A time=00:00:03.40 bitrate=N/A dup=96 drop=0 speed=0.716x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530668331569 orig timestamp 4530668331569 graph timestamp 4530668330000 diff -1569 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 105 QP=23.96 NAL=2 Slice:P Poc:216 I:1043 P:2404 SKIP:153  size=30430 bytes
+[libx264 @ 0000020665f4a5c0] frame= 106 QP=24.42 NAL=2 Slice:B Poc:212 I:1848 P:1479 SKIP:273  size=26099 bytes
+[libx264 @ 0000020665f4a5c0] frame= 107 QP=25.06 NAL=0 Slice:B Poc:210 I:2    P:511  SKIP:3087 size=937 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530669291552 orig timestamp 4530669291552 graph timestamp 4530669290000 diff -1552 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 108 QP=25.01 NAL=0 Slice:B Poc:214 I:25   P:731  SKIP:2844 size=1306 bytes
+[libx264 @ 0000020665f4a5c0] frame= 109 QP=25.40 NAL=2 Slice:P Poc:224 I:657  P:2766 SKIP:177  size=23176 bytes
+[libx264 @ 0000020665f4a5c0] frame= 110 QP=24.20 NAL=2 Slice:B Poc:220 I:72   P:1690 SKIP:1838 size=4380 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530670251904 orig timestamp 4530670251904 graph timestamp 4530670250000 diff -1904 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 111 QP=24.84 NAL=0 Slice:B Poc:218 I:25   P:614  SKIP:2961 size=1136 bytes
+[libx264 @ 0000020665f4a5c0] frame= 112 QP=24.83 NAL=0 Slice:B Poc:222 I:2    P:287  SKIP:3311 size=499 bytes
+[libx264 @ 0000020665f4a5c0] frame= 113 QP=25.18 NAL=2 Slice:P Poc:232 I:712  P:2729 SKIP:159  size=24389 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530671371299 orig timestamp 4530671371299 graph timestamp 4530671370000 diff -1299 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 114 QP=23.24 NAL=2 Slice:B Poc:228 I:162  P:2200 SKIP:1238 size=8088 bytes
+[libx264 @ 0000020665f4a5c0] frame= 115 QP=24.87 NAL=0 Slice:B Poc:226 I:5    P:554  SKIP:3041 size=829 bytes
+[libx264 @ 0000020665f4a5c0] frame= 116 QP=24.19 NAL=0 Slice:B Poc:230 I:3    P:414  SKIP:3183 size=614 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530672331454 orig timestamp 4530672331454 graph timestamp 4530672330000 diff -1454 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 117 QP=23.82 NAL=2 Slice:P Poc:240 I:997  P:2472 SKIP:131  size=30502 bytes
+[libx264 @ 0000020665f4a5c0] frame= 118 QP=24.49 NAL=2 Slice:B Poc:236 I:1839 P:1463 SKIP:298  size=25904 bytes
+[libx264 @ 0000020665f4a5c0] frame= 119 QP=25.40 NAL=0 Slice:B Poc:234 I:9    P:679  SKIP:2912 size=1221 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530673291367 orig timestamp 4530673291367 graph timestamp 4530673290000 diff -1367 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 120 QP=24.95 NAL=0 Slice:B Poc:238 I:21   P:742  SKIP:2837 size=1259 bytes
+[libx264 @ 0000020665f4a5c0] frame= 121 QP=25.11 NAL=2 Slice:P Poc:248 I:757  P:2683 SKIP:160  size=24494 bytes
+[libx264 @ 0000020665f4a5c0] frame= 122 QP=24.21 NAL=2 Slice:B Poc:244 I:69   P:1582 SKIP:1949 size=3910 bytes
+frame=  122 fps= 23 q=29.0 size=N/A time=00:00:04.00 bitrate=N/A dup=108 drop=0 speed=0.755x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530674251834 orig timestamp 4530674251834 graph timestamp 4530674250000 diff -1834 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 123 QP=25.03 NAL=0 Slice:B Poc:242 I:23   P:707  SKIP:2870 size=1231 bytes
+[libx264 @ 0000020665f4a5c0] frame= 124 QP=24.28 NAL=0 Slice:B Poc:246 I:3    P:315  SKIP:3282 size=502 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530675212053 orig timestamp 4530675212053 graph timestamp 4530675210000 diff -2053 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 125 QP=22.83 NAL=2 Slice:P Poc:256 I:1288 P:2190 SKIP:122  size=35525 bytes
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 126 QP=23.31 NAL=2 Slice:B Poc:252 I:1866 P:1493 SKIP:241  size=31728 bytes
+[libx264 @ 0000020665f4a5c0] frame= 127 QP=24.83 NAL=0 Slice:B Poc:250 I:1    P:636  SKIP:2963 size=808 bytes
+[libx264 @ 0000020665f4a5c0] frame= 128 QP=24.76 NAL=0 Slice:B Poc:254 I:3    P:664  SKIP:2933 size=835 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530676331163 orig timestamp 4530676331163 graph timestamp 4530676330000 diff -1163 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 129 QP=23.87 NAL=2 Slice:P Poc:264 I:923  P:2543 SKIP:134  size=29868 bytes
+[libx264 @ 0000020665f4a5c0] frame= 130 QP=23.97 NAL=2 Slice:B Poc:260 I:27   P:1062 SKIP:2511 size=1625 bytes
+[libx264 @ 0000020665f4a5c0] frame= 131 QP=24.57 NAL=0 Slice:B Poc:258 I:3    P:267  SKIP:3330 size=373 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530677291312 orig timestamp 4530677291312 graph timestamp 4530677290000 diff -1312 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 132 QP=24.79 NAL=0 Slice:B Poc:262 I:18   P:639  SKIP:2943 size=1113 bytes
+[libx264 @ 0000020665f4a5c0] frame= 133 QP=25.08 NAL=2 Slice:P Poc:272 I:548  P:2897 SKIP:155  size=24366 bytes
+[libx264 @ 0000020665f4a5c0] frame= 134 QP=24.14 NAL=2 Slice:B Poc:268 I:104  P:1590 SKIP:1906 size=4260 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530678251510 orig timestamp 4530678251510 graph timestamp 4530678250000 diff -1510 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 135 QP=24.83 NAL=0 Slice:B Poc:266 I:26   P:832  SKIP:2742 size=1384 bytes
+[libx264 @ 0000020665f4a5c0] frame= 136 QP=24.43 NAL=0 Slice:B Poc:270 I:4    P:278  SKIP:3318 size=492 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530679211783 orig timestamp 4530679211783 graph timestamp 4530679230000 diff 18217 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 137 QP=22.80 NAL=2 Slice:P Poc:280 I:1239 P:2225 SKIP:136  size=35447 bytes
+frame=  137 fps= 24 q=29.0 size=N/A time=00:00:04.50 bitrate=N/A dup=118 drop=0 speed=0.776x    [rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 138 QP=23.36 NAL=2 Slice:B Poc:276 I:1944 P:1387 SKIP:269  size=31454 bytes
+[libx264 @ 0000020665f4a5c0] frame= 139 QP=24.69 NAL=0 Slice:B Poc:274 I:3    P:615  SKIP:2982 size=828 bytes
+[libx264 @ 0000020665f4a5c0] frame= 140 QP=24.77 NAL=0 Slice:B Poc:278 I:2    P:559  SKIP:3039 size=709 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530680331100 orig timestamp 4530680331100 graph timestamp 4530680330000 diff -1100 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 141 QP=23.85 NAL=2 Slice:P Poc:288 I:923  P:2515 SKIP:162  size=29848 bytes
+[libx264 @ 0000020665f4a5c0] frame= 142 QP=23.68 NAL=2 Slice:B Poc:284 I:24   P:998  SKIP:2578 size=1540 bytes
+[libx264 @ 0000020665f4a5c0] frame= 143 QP=24.33 NAL=0 Slice:B Poc:282 I:2    P:323  SKIP:3275 size=434 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530681291239 orig timestamp 4530681291239 graph timestamp 4530681290000 diff -1239 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 144 QP=24.83 NAL=0 Slice:B Poc:286 I:29   P:432  SKIP:3139 size=958 bytes
+[libx264 @ 0000020665f4a5c0] frame= 145 QP=25.18 NAL=2 Slice:P Poc:296 I:464  P:2960 SKIP:176  size=24116 bytes
+[libx264 @ 0000020665f4a5c0] frame= 146 QP=24.06 NAL=2 Slice:B Poc:292 I:100  P:1519 SKIP:1981 size=4102 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530682251545 orig timestamp 4530682251545 graph timestamp 4530682270000 diff 18455 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 147 QP=24.78 NAL=0 Slice:B Poc:290 I:20   P:535  SKIP:3045 size=1022 bytes
+[libx264 @ 0000020665f4a5c0] frame= 148 QP=24.80 NAL=0 Slice:B Poc:294 I:4    P:262  SKIP:3334 size=469 bytes
+[libx264 @ 0000020665f4a5c0] frame= 149 QP=22.84 NAL=2 Slice:P Poc:304 I:1275 P:2189 SKIP:136  size=35255 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530683211835 orig timestamp 4530683211835 graph timestamp 4530683230000 diff 18165 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 150 QP=23.37 NAL=2 Slice:B Poc:300 I:1949 P:1408 SKIP:243  size=31647 bytes
+[libx264 @ 0000020665f4a5c0] frame= 151 QP=24.76 NAL=0 Slice:B Poc:298 I:5    P:647  SKIP:2948 size=891 bytes
+[libx264 @ 0000020665f4a5c0] frame= 152 QP=24.53 NAL=0 Slice:B Poc:302 I:4    P:678  SKIP:2918 size=902 bytes
+frame=  152 fps= 24 q=29.0 size=N/A time=00:00:05.00 bitrate=N/A dup=128 drop=0 speed=0.786x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530684331010 orig timestamp 4530684331010 graph timestamp 4530684330000 diff -1010 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 153 QP=23.81 NAL=2 Slice:P Poc:312 I:884  P:2559 SKIP:157  size=29922 bytes
+[libx264 @ 0000020665f4a5c0] frame= 154 QP=23.98 NAL=2 Slice:B Poc:308 I:28   P:1095 SKIP:2477 size=1674 bytes
+[libx264 @ 0000020665f4a5c0] frame= 155 QP=24.60 NAL=0 Slice:B Poc:306 I:3    P:198  SKIP:3399 size=308 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530685291124 orig timestamp 4530685291124 graph timestamp 4530685290000 diff -1124 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 156 QP=24.68 NAL=0 Slice:B Poc:310 I:18   P:425  SKIP:3157 size=850 bytes
+[libx264 @ 0000020665f4a5c0] frame= 157 QP=25.12 NAL=2 Slice:P Poc:320 I:495  P:2957 SKIP:148  size=24514 bytes
+[libx264 @ 0000020665f4a5c0] frame= 158 QP=24.15 NAL=2 Slice:B Poc:316 I:97   P:1583 SKIP:1920 size=4257 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530686250959 orig timestamp 4530686250959 graph timestamp 4530686250000 diff -959 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 159 QP=24.94 NAL=0 Slice:B Poc:314 I:17   P:803  SKIP:2780 size=1267 bytes
+[libx264 @ 0000020665f4a5c0] frame= 160 QP=24.80 NAL=0 Slice:B Poc:318 I:5    P:275  SKIP:3320 size=507 bytes
+[libx264 @ 0000020665f4a5c0] frame= 161 QP=22.86 NAL=2 Slice:P Poc:328 I:1255 P:2243 SKIP:102  size=35913 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530687211298 orig timestamp 4530687211298 graph timestamp 4530687210000 diff -1298 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 162 QP=23.32 NAL=2 Slice:B Poc:324 I:1941 P:1456 SKIP:203  size=31940 bytes
+[libx264 @ 0000020665f4a5c0] frame= 163 QP=24.53 NAL=0 Slice:B Poc:322 I:3    P:557  SKIP:3040 size=769 bytes
+[libx264 @ 0000020665f4a5c0] frame= 164 QP=24.74 NAL=0 Slice:B Poc:326 I:4    P:600  SKIP:2996 size=825 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530688171056 orig timestamp 4530688171056 graph timestamp 4530688170000 diff -1056 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 1 dup!
+[libx264 @ 0000020665f4a5c0] frame= 165 QP=23.84 NAL=2 Slice:P Poc:336 I:931  P:2522 SKIP:147  size=29910 bytes
+[libx264 @ 0000020665f4a5c0] frame= 166 QP=23.87 NAL=2 Slice:B Poc:332 I:24   P:941  SKIP:2635 size=1571 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530689290536 orig timestamp 4530689290536 graph timestamp 4530689290000 diff -536 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 3 dup!
+[libx264 @ 0000020665f4a5c0] frame= 167 QP=24.43 NAL=0 Slice:B Poc:330 I:3    P:181  SKIP:3416 size=312 bytes
+[libx264 @ 0000020665f4a5c0] frame= 168 QP=24.66 NAL=0 Slice:B Poc:334 I:20   P:469  SKIP:3111 size=900 bytes
+[libx264 @ 0000020665f4a5c0] frame= 169 QP=25.10 NAL=2 Slice:P Poc:344 I:548  P:2897 SKIP:155  size=24674 bytes
+[libx264 @ 0000020665f4a5c0] frame= 170 QP=24.07 NAL=2 Slice:B Poc:340 I:105  P:1556 SKIP:1939 size=4144 bytes
+frame=  168 fps= 24 q=29.0 size=N/A time=00:00:05.59 bitrate=N/A dup=140 drop=0 speed=0.813x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530690250869 orig timestamp 4530690250869 graph timestamp 4530690250000 diff -869 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 171 QP=24.70 NAL=0 Slice:B Poc:338 I:19   P:776  SKIP:2805 size=1250 bytes
+[libx264 @ 0000020665f4a5c0] frame= 172 QP=24.19 NAL=0 Slice:B Poc:342 I:6    P:315  SKIP:3279 size=553 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530691210875 orig timestamp 4530691210875 graph timestamp 4530691210000 diff -875 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 173 QP=22.85 NAL=2 Slice:P Poc:352 I:1282 P:2205 SKIP:113  size=35749 bytes
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 174 QP=23.40 NAL=2 Slice:B Poc:348 I:1929 P:1467 SKIP:204  size=31902 bytes
+[libx264 @ 0000020665f4a5c0] frame= 175 QP=25.12 NAL=0 Slice:B Poc:346 I:1    P:615  SKIP:2984 size=782 bytes
+[libx264 @ 0000020665f4a5c0] frame= 176 QP=24.77 NAL=0 Slice:B Poc:350 I:5    P:551  SKIP:3044 size=820 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530692171157 orig timestamp 4530692171157 graph timestamp 4530692170000 diff -1157 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 1 dup!
+[libx264 @ 0000020665f4a5c0] frame= 177 QP=23.83 NAL=2 Slice:P Poc:360 I:899  P:2573 SKIP:128  size=30056 bytes
+[libx264 @ 0000020665f4a5c0] frame= 178 QP=23.77 NAL=2 Slice:B Poc:356 I:29   P:1087 SKIP:2484 size=1726 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530693290545 orig timestamp 4530693290545 graph timestamp 4530693290000 diff -545 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 3 dup!
+[libx264 @ 0000020665f4a5c0] frame= 179 QP=24.10 NAL=0 Slice:B Poc:354 I:2    P:296  SKIP:3302 size=419 bytes
+[libx264 @ 0000020665f4a5c0] frame= 180 QP=24.82 NAL=0 Slice:B Poc:358 I:24   P:663  SKIP:2913 size=1161 bytes
+[libx264 @ 0000020665f4a5c0] frame= 181 QP=24.98 NAL=2 Slice:P Poc:368 I:554  P:2910 SKIP:136  size=24938 bytes
+[libx264 @ 0000020665f4a5c0] frame= 182 QP=24.18 NAL=2 Slice:B Poc:364 I:98   P:1574 SKIP:1928 size=4082 bytes
+[libx264 @ 0000020665f4a5c0] scene cut at 191 Icost:984059 Pcost:676218 ratio:0.3128 bias:0.3213 gop:191 (imb:2233 pmb:1121)
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530694250843 orig timestamp 4530694250843 graph timestamp 4530694250000 diff -843 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 183 QP=24.84 NAL=0 Slice:B Poc:362 I:21   P:676  SKIP:2903 size=1165 bytes
+[libx264 @ 0000020665f4a5c0] frame= 184 QP=24.41 NAL=0 Slice:B Poc:366 I:4    P:322  SKIP:3274 size=536 bytes
+[libx264 @ 0000020665f4a5c0] frame= 185 QP=22.85 NAL=2 Slice:P Poc:376 I:1278 P:2209 SKIP:113  size=36023 bytes
+frame=  185 fps= 25 q=29.0 size=N/A time=00:00:06.09 bitrate=N/A dup=150 drop=0 speed=0.825x    [dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530695211637 orig timestamp 4530695211637 graph timestamp 4530695210000 diff -1637 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 186 QP=23.36 NAL=2 Slice:B Poc:372 I:1955 P:1431 SKIP:214  size=31801 bytes
+[libx264 @ 0000020665f4a5c0] frame= 187 QP=24.96 NAL=0 Slice:B Poc:370 I:4    P:472  SKIP:3124 size=654 bytes
+[libx264 @ 0000020665f4a5c0] frame= 188 QP=24.92 NAL=0 Slice:B Poc:374 I:2    P:688  SKIP:2910 size=923 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530696171479 orig timestamp 4530696171479 graph timestamp 4530696170000 diff -1479 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 1 dup!
+[libx264 @ 0000020665f4a5c0] frame= 189 QP=24.08 NAL=2 Slice:P Poc:380 I:2    P:345  SKIP:3253 size=606 bytes
+[libx264 @ 0000020665f4a5c0] frame= 190 QP=24.04 NAL=0 Slice:B Poc:378 I:4    P:239  SKIP:3357 size=353 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530697291411 orig timestamp 4530697291411 graph timestamp 4530697280000 diff -11411 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 3 dup!
+[libx264 @ 0000020665f4a5c0] frame= 191 QP=19.76 NAL=3 Slice:I Poc:0   I:3600 P:0    SKIP:0    size=64203 bytes
+[libx264 @ 0000020665f4a5c0] frame= 192 QP=23.84 NAL=2 Slice:P Poc:8   I:886  P:2592 SKIP:122  size=32020 bytes
+[hls @ 0000020665f47340] Opening 'C:/Users/Dell/Desktop/static/stream0.ts' for writing
+[file @ 0000020665f69800] Setting default whitelist 'file,crypto,data'
+[libx264 @ 0000020665f4a5c0] frame= 193 QP=23.84 NAL=2 Slice:B Poc:4   I:3    P:230  SKIP:3367 size=411 bytes
+[hls @ 0000020665f47340] Failed to open file 'C:/Users/Dell/Desktop/static/stream0.ts'
+av_interleaved_write_frame(): No such file or directory
+[libx264 @ 0000020665f4a5c0] frame= 194 QP=23.63 NAL=0 Slice:B Poc:2   I:0    P:53   SKIP:3547 size=120 bytes
+[out#0/hls @ 0000020665f457c0] Error muxing a packet
+[out#0/hls @ 0000020665f457c0] Terminating muxer thread
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530698251120 orig timestamp 4530698251120 graph timestamp 4530698250000 diff -1120 Integrated Webcam
+[rawvideo @ 0000020665f43b40] PACKET SIZE: 614400, STRIDE: 1280
+[vost#0:0/libx264 @ 0000020665f4a2c0] *** 2 dup!
+[libx264 @ 0000020665f4a5c0] frame= 195 QP=24.71 NAL=0 Slice:B Poc:6   I:42   P:673  SKIP:2885 size=1311 bytes
+[libx264 @ 0000020665f4a5c0] frame= 196 QP=25.02 NAL=2 Slice:P Poc:16  I:455  P:2992 SKIP:153  size=25537 bytes
+[libx264 @ 0000020665f4a5c0] frame= 197 QP=24.24 NAL=2 Slice:B Poc:12  I:135  P:1449 SKIP:2016 size=4126 bytes
+No more output streams to write to, finishing.
+[libx264 @ 0000020665f4a5c0] frame= 198 QP=24.73 NAL=0 Slice:B Poc:10  I:38   P:824  SKIP:2738 size=1472 bytes
+[libx264 @ 0000020665f4a5c0] frame= 199 QP=24.18 NAL=0 Slice:B Poc:14  I:4    P:331  SKIP:3265 size=551 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530699211400 orig timestamp 4530699211400 graph timestamp 4530699310000 diff 98600 Integrated Webcam
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530700171585 orig timestamp 4530700171585 graph timestamp 4530700170000 diff -1585 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 200 QP=22.93 NAL=2 Slice:P Poc:24  I:1286 P:2197 SKIP:117  size=36048 bytes
+[libx264 @ 0000020665f4a5c0] frame= 201 QP=23.39 NAL=2 Slice:B Poc:20  I:1989 P:1418 SKIP:193  size=31981 bytes
+[libx264 @ 0000020665f4a5c0] frame= 202 QP=24.56 NAL=0 Slice:B Poc:18  I:3    P:735  SKIP:2862 size=934 bytes
+[libx264 @ 0000020665f4a5c0] frame= 203 QP=24.76 NAL=0 Slice:B Poc:22  I:3    P:692  SKIP:2905 size=890 bytes
+[libx264 @ 0000020665f4a5c0] frame= 204 QP=23.90 NAL=2 Slice:P Poc:32  I:914  P:2552 SKIP:134  size=30318 bytes
+[libx264 @ 0000020665f4a5c0] frame= 205 QP=23.97 NAL=2 Slice:B Poc:28  I:25   P:1034 SKIP:2541 size=1764 bytes
+[libx264 @ 0000020665f4a5c0] frame= 206 QP=24.12 NAL=0 Slice:B Poc:26  I:2    P:288  SKIP:3310 size=419 bytes
+[libx264 @ 0000020665f4a5c0] frame= 207 QP=24.90 NAL=0 Slice:B Poc:30  I:28   P:645  SKIP:2927 size=1205 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530701131815 orig timestamp 4530701131815 graph timestamp 4530701150000 diff 18185 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 208 QP=25.09 NAL=2 Slice:P Poc:40  I:474  P:2981 SKIP:145  size=24686 bytes
+[libx264 @ 0000020665f4a5c0] frame= 209 QP=24.26 NAL=2 Slice:B Poc:36  I:115  P:1572 SKIP:1913 size=4214 bytes
+[libx264 @ 0000020665f4a5c0] frame= 210 QP=24.74 NAL=0 Slice:B Poc:34  I:31   P:751  SKIP:2818 size=1315 bytes
+[libx264 @ 0000020665f4a5c0] frame= 211 QP=24.26 NAL=0 Slice:B Poc:38  I:3    P:349  SKIP:3248 size=582 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530702251192 orig timestamp 4530702251192 graph timestamp 4530702280000 diff 28808 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 212 QP=22.94 NAL=2 Slice:P Poc:48  I:1278 P:2185 SKIP:137  size=35187 bytes
+[libx264 @ 0000020665f4a5c0] frame= 213 QP=23.36 NAL=2 Slice:B Poc:44  I:1933 P:1470 SKIP:197  size=31566 bytes
+[libx264 @ 0000020665f4a5c0] frame= 214 QP=24.48 NAL=0 Slice:B Poc:42  I:4    P:589  SKIP:3007 size=793 bytes
+[libx264 @ 0000020665f4a5c0] frame= 215 QP=24.41 NAL=0 Slice:B Poc:46  I:3    P:601  SKIP:2996 size=784 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530703211354 orig timestamp 4530703211354 graph timestamp 4530703210000 diff -1354 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 216 QP=23.90 NAL=2 Slice:P Poc:56  I:954  P:2509 SKIP:137  size=29922 bytes
+[libx264 @ 0000020665f4a5c0] frame= 217 QP=23.95 NAL=2 Slice:B Poc:52  I:23   P:1159 SKIP:2418 size=1700 bytes
+[libx264 @ 0000020665f4a5c0] frame= 218 QP=24.12 NAL=0 Slice:B Poc:50  I:3    P:307  SKIP:3290 size=426 bytes
+[libx264 @ 0000020665f4a5c0] frame= 219 QP=24.88 NAL=0 Slice:B Poc:54  I:21   P:579  SKIP:3000 size=1040 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530704171559 orig timestamp 4530704171559 graph timestamp 4530704260000 diff 88441 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 220 QP=25.18 NAL=2 Slice:P Poc:64  I:479  P:2964 SKIP:157  size=23921 bytes
+[libx264 @ 0000020665f4a5c0] frame= 221 QP=24.35 NAL=2 Slice:B Poc:60  I:109  P:1643 SKIP:1848 size=4620 bytes
+[libx264 @ 0000020665f4a5c0] frame= 222 QP=24.70 NAL=0 Slice:B Poc:58  I:21   P:725  SKIP:2854 size=1231 bytes
+[libx264 @ 0000020665f4a5c0] frame= 223 QP=24.64 NAL=0 Slice:B Poc:62  I:3    P:332  SKIP:3265 size=560 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530705131743 orig timestamp 4530705131743 graph timestamp 4530705140000 diff 8257 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 224 QP=22.95 NAL=2 Slice:P Poc:72  I:1305 P:2170 SKIP:125  size=35407 bytes
+[libx264 @ 0000020665f4a5c0] frame= 225 QP=23.33 NAL=2 Slice:B Poc:68  I:1949 P:1476 SKIP:175  size=32200 bytes
+[libx264 @ 0000020665f4a5c0] frame= 226 QP=24.78 NAL=0 Slice:B Poc:66  I:1    P:616  SKIP:2983 size=818 bytes
+[libx264 @ 0000020665f4a5c0] frame= 227 QP=24.78 NAL=0 Slice:B Poc:70  I:1    P:830  SKIP:2769 size=1005 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530706254772 orig timestamp 4530706254772 graph timestamp 4530706360000 diff 105228 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 228 QP=24.04 NAL=2 Slice:P Poc:80  I:881  P:2584 SKIP:135  size=29496 bytes
+[libx264 @ 0000020665f4a5c0] frame= 229 QP=23.86 NAL=2 Slice:B Poc:76  I:22   P:1175 SKIP:2403 size=1837 bytes
+[libx264 @ 0000020665f4a5c0] frame= 230 QP=24.48 NAL=0 Slice:B Poc:74  I:5    P:248  SKIP:3347 size=376 bytes
+[libx264 @ 0000020665f4a5c0] frame= 231 QP=25.12 NAL=0 Slice:B Poc:78  I:30   P:535  SKIP:3035 size=1004 bytes
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530707214841 orig timestamp 4530707214841 graph timestamp 4530707220000 diff 5159 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] frame= 232 QP=25.93 NAL=2 Slice:P Poc:88  I:479  P:2899 SKIP:222  size=21209 bytes
+[libx264 @ 0000020665f4a5c0] frame= 233 QP=24.74 NAL=2 Slice:B Poc:84  I:129  P:1723 SKIP:1748 size=4932 bytes
+[libx264 @ 0000020665f4a5c0] frame= 234 QP=25.02 NAL=0 Slice:B Poc:82  I:26   P:446  SKIP:3128 size=925 bytes
+[libx264 @ 0000020665f4a5c0] frame= 235 QP=24.75 NAL=0 Slice:B Poc:86  I:5    P:308  SKIP:3287 size=549 bytes
+[libx264 @ 0000020665f4a5c0] frame= 236 QP=26.51 NAL=2 Slice:P Poc:92  I:636  P:2618 SKIP:346  size=20119 bytes
+[libx264 @ 0000020665f4a5c0] frame= 237 QP=25.91 NAL=0 Slice:B Poc:90  I:125  P:1317 SKIP:2158 size=3256 bytes
+[hls @ 0000020665f47340] Opening 'C:/Users/Dell/Desktop/static/stream0.ts' for writing
+[file @ 000002066faec2c0] Setting default whitelist 'file,crypto,data'
+[hls @ 0000020665f47340] Failed to open file 'C:/Users/Dell/Desktop/static/stream0.ts'
+[hls @ 0000020665f47340] Opening 'C:/Users/Dell/Desktop/static/stream.m3u8.tmp' for writing
+[file @ 000002066faec640] Setting default whitelist 'file,crypto,data'
+frame=  192 fps= 22 q=-1.0 Lsize=N/A time=00:00:07.83 bitrate=N/A dup=158 drop=0 speed=0.884x    
+video:2076kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+Input file #0 (video=Integrated Webcam):
+  Input stream #0:0 (video): 80 packets read (49152000 bytes); 80 frames decoded; 
+  Total: 80 packets (49152000 bytes) demuxed
+Output file #0 (C:/Users/Dell/Desktop/static/stream.m3u8):
+  Output stream #0:0 (video): 238 frames encoded; 192 packets muxed (2125349 bytes); 
+  Total: 192 packets (2125349 bytes) muxed
+80 frames successfully decoded, 0 decoding errors
+[libx264 @ 0000020665f4a5c0] frame I:2     Avg QP:21.30  size: 53999
+[libx264 @ 0000020665f4a5c0] frame P:60    Avg QP:24.22  size: 28591
+[libx264 @ 0000020665f4a5c0] frame B:176   Avg QP:24.48  size:  4466
+[libx264 @ 0000020665f4a5c0] consecutive B-frames:  0.8%  1.7%  0.0% 97.5%
+[libx264 @ 0000020665f4a5c0] mb I  I16..4:  3.4% 87.2%  9.4%
+[libx264 @ 0000020665f4a5c0] mb P  I16..4:  1.0% 23.1%  0.6%  P16..4: 46.4% 16.1%  7.4%  0.0%  0.0%    skip: 5.5%
+[libx264 @ 0000020665f4a5c0] mb B  I16..4:  2.4%  4.0%  0.0%  B16..8:  6.4%  1.0%  0.0%  direct:15.1%  skip:71.0%  L0:44.7% L1:49.0% BI: 6.3%
+[libx264 @ 0000020665f4a5c0] 8x8 transform intra:80.5% inter:71.7%
+[libx264 @ 0000020665f4a5c0] coded y,uvDC,uvAC intra: 67.9% 98.4% 31.2% inter: 13.2% 32.8% 0.2%
+[libx264 @ 0000020665f4a5c0] i16 v,h,dc,p: 19% 18% 50% 14%
+[libx264 @ 0000020665f4a5c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 15% 31%  7%  7%  5%  9%  5%  9%
+[libx264 @ 0000020665f4a5c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 24% 22%  7%  8%  4%  8%  3%  6%
+[libx264 @ 0000020665f4a5c0] i8c dc,h,v,p: 66% 16% 13%  5%
+[libx264 @ 0000020665f4a5c0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0000020665f4a5c0] ref P L0: 55.1% 44.9%
+[dshow @ 0000020665e9b980] passing through packet of type video size   614400 timestamp 4530708174884 orig timestamp 4530708174884 graph timestamp 4530708170000 diff -4884 Integrated Webcam
+[libx264 @ 0000020665f4a5c0] ref B L0: 76.9% 23.1%
+[libx264 @ 0000020665f4a5c0] ref B L1: 99.0%  1.0%
+[libx264 @ 0000020665f4a5c0] kb/s:2631.38
+Terminating demuxer thread 0
+[dshow @ 0000020665e9b980] frame with missing sample timestamp encountered, falling back to graph timestamp
+[dshow @ 0000020665e9b980] passing through packet of type video size        0 timestamp 4530710950000 orig timestamp 4530615430000 graph timestamp 4530710950000 diff 95520000 Integrated Webcam
+Conversion failed!

@@ -1,0 +1,2 @@
+@echo off
+ffmpeg -i rtsp://192.168.1.15:1963 -c:v copy -c:a aac -strict experimental -f hls -hls_flags delete_segments -hls_time 1 -hls_list_size 2 -preset ultrafast -tune zerolatency -threads 0 ./static/output.m3u8

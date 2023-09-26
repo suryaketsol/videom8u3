@@ -1,0 +1,49 @@
+ffmpeg started on 2023-09-20 at 18:10:54
+Report written to "ffmpeg-20230920-181054.log"
+Log level: 48
+Command line:
+ffmpeg -report -f dshow -rtbufsize 100M -i "video=Integrated Webcam" -vf "scale=1280:720" -c:v libx264 -preset fast -
+ffmpeg version 6.0-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Splitting the commandline.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'dshow'.
+Reading option '-rtbufsize' ... matched as AVOption 'rtbufsize' with argument '100M'.
+Reading option '-i' ... matched as input url with argument 'video=Integrated Webcam'.
+Reading option '-vf' ... matched as option 'vf' (set video filters) with argument 'scale=1280:720'.
+Reading option '-c:v' ... matched as option 'c' (codec name) with argument 'libx264'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'fast'.
+Reading option '-' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url video=Integrated Webcam.
+Applying option f (force format) with argument dshow.
+Successfully parsed a group of options.
+Opening an input file: video=Integrated Webcam.
+[dshow @ 0000023af3071bc0] Selecting pin Capture on video
+[dshow @ 0000023af3071bc0] passing through packet of type video size   614400 timestamp 4530509814752 orig timestamp 4530509814752 graph timestamp 4530509810000 diff -4752 Integrated Webcam
+[dshow @ 0000023af3071bc0] All info found
+Input #0, dshow, from 'video=Integrated Webcam':
+  Duration: N/A, start: 453050.981475, bitrate: N/A
+  Stream #0:0, 1, 1/10000000: Video: rawvideo (YUY2 / 0x32595559), yuyv422(tv, bt470bg/bt709/unknown), 640x480, 30 fps, 30 tbr, 10000k tbn
+Successfully opened the file.
+Parsing a group of options: output url -.
+Applying option vf (set video filters) with argument scale=1280:720.
+Applying option c:v (codec name) with argument libx264.
+Successfully parsed a group of options.
+Opening an output file: -.
+[NULL @ 0000023af3115e00] Unable to find a suitable output format for 'pipe:'
+pipe:: Invalid argument
+[dshow @ 0000023af3071bc0] frame with missing sample timestamp encountered, falling back to graph timestamp
+[dshow @ 0000023af3071bc0] passing through packet of type video size        0 timestamp 4530512440000 orig timestamp 4530505870000 graph timestamp 4530512440000 diff 6570000 Integrated Webcam
